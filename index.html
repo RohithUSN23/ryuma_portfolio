@@ -3,155 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ryuma's Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        body {
+        /* Reset and Base Styles */
+        * {
             margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #0a0f25;
-            color: #ffffff;
-            overflow-x: hidden;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        header {
-            background-color: #101532;
-            padding: 20px;
-            text-align: center;
-            position: sticky;
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /* Navigation Bar */
+        nav {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
         }
-
-        header h1 {
-            font-size: 2.5em;
-            color: #00d9ff;
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: auto;
         }
-
+        nav h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+            color: #ff6f61;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            font-weight: 600;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ff6f61;
+        }
+        /* Intro Section */
         .intro {
-            padding: 100px 20px;
+            background: linear-gradient(135deg, #ff6f61, #ffcc5c);
+            color: #ffffff;
+            padding: 100px 20px 60px 20px;
             text-align: center;
+            margin-top: 70px;
         }
-
         .intro h2 {
-            font-size: 2em;
-            color: #00ffab;
-        }
-
-        .intro p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 20px auto;
-            color: #b0b3c6;
-        }
-
-        .portfolio {
-            background-color: #12193e;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .portfolio h2 {
+            font-family: 'Montserrat', sans-serif;
             font-size: 2.5em;
-            color: #00ffab;
+            margin-bottom: 20px;
         }
-
-        .portfolio .projects {
+        .intro p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        /* Portfolio Section */
+        .portfolio {
+            padding: 60px 20px;
+            background-color: #ffffff;
+        }
+        .portfolio h2 {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: #ff6f61;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .project-card {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .project-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #ff6f61;
+            margin-bottom: 10px;
+        }
+        .project-card p {
+            color: #555;
+        }
+        /* Certificates Section */
+        .certificates {
+            padding: 60px 20px;
+            background-color: #f0f4f8;
+        }
+        .certificates h2 {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: #ff6f61;
+        }
+        .certificate-list {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            margin-top: 40px;
+            max-width: 1200px;
+            margin: auto;
         }
-
-        .portfolio .project-card {
-            background-color: #1a244d;
-            border: 1px solid #00d9ff;
+        .certificate-item {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
             border-radius: 10px;
             padding: 20px;
-            width: 300px;
-            transition: transform 0.3s ease;
+            width: 280px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .portfolio .project-card:hover {
-            transform: scale(1.05);
+        .certificate-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-
-        .project-card h3 {
-            color: #00d9ff;
-            font-size: 1.5em;
+        .certificate-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #ff6f61;
+            margin-bottom: 10px;
         }
-
-        .project-card p {
-            color: #b0b3c6;
-            font-size: 1em;
+        .certificate-item p {
+            color: #555;
         }
-
-        footer {
-            background-color: #101532;
-            padding: 20px;
+        /* Contact Section */
+        .contact {
+            padding: 60px 20px;
+            background-color: #ffffff;
+        }
+        .contact h2 {
             text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: #ff6f61;
         }
-
-        footer p {
-            color: #b0b3c6;
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
             font-size: 1em;
+            transition: border-color 0.3s ease;
         }
-
-        .neon-btn {
-            background-color: #00d9ff;
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #ff6f61;
+            outline: none;
+        }
+        .contact-form button {
+            padding: 15px;
             border: none;
-            padding: 10px 20px;
-            color: #101532;
-            font-size: 1.2em;
+            background-color: #ff6f61;
+            color: #ffffff;
+            font-size: 1.1em;
             border-radius: 5px;
             cursor: pointer;
-            transition: box-shadow 0.3s ease;
+            transition: background-color 0.3s ease;
         }
-
-        .neon-btn:hover {
-            box-shadow: 0 0 20px #00d9ff, 0 0 30px #00d9ff, 0 0 40px #00d9ff;
+        .contact-form button:hover {
+            background-color: #e65b50;
         }
-
+        /* Footer */
+        footer {
+            background-color: #333333;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+        footer a {
+            color: #ff6f61;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #ff8f80;
+        }
+        /* Responsive */
         @media (max-width: 768px) {
-            .portfolio .projects {
+            nav .container {
                 flex-direction: column;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 10px 0;
             }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Ryuma's Portfolio</h1>
-</header>
-
-<section class="intro">
-    <h2>Welcome to My Futuristic World</h2>
-    <p>Hi, I'm Ryuma, a college student passionate about technology and development. Below, you'll find my projects, coding work, and certificates that showcase my journey and achievements.</p>
-</section>
-
-<section class="portfolio">
-    <h2>My Projects & Certificates</h2>
-    <div class="projects">
-        <div class="project-card">
-            <h3>Project 1: Futuristic App</h3>
-            <p>A mobile application designed with a sleek, futuristic interface, focusing on user experience and efficiency.</p>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <h1>Ryuma</h1>
+            <ul>
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-        <div class="project-card">
-            <h3>Certificate: Web Development</h3>
-            <p>Certified in web development, mastering both front-end and back-end technologies.</p>
-        </div>
-        <div class="project-card">
-            <h3>Code Repo: AI Chatbot</h3>
-            <p>Developed an AI-powered chatbot capable of understanding and responding to user queries in real-time.</p>
-        </div>
-    </div>
-</section>
+    </nav>
 
-<footer>
-    <p>Connect with me: <a href="mailto:ryuma@example.com" class="neon-btn">Email Me</a></p>
-</footer>
+    <!-- Intro Section -->
+    <section id="intro" class="intro">
+        <h2>Welcome to My Portfolio</h2>
+        <p>Hi, I'm Ryuma, a college student passionate about technology, development, and creating impactful projects. Explore my work and feel free to get in touch!</p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <h2>My Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <h3>Futuristic App</h3>
+                <p>A mobile application with a sleek, user-friendly interface focused on enhancing user experience and productivity.</p>
+            </div>
+            <div class="project-card">
+                <h3>AI Chatbot</h3>
+                <p>Developed an AI-powered chatbot capable of understanding and responding to user queries in real-time.</p>
+            </div>
+            <div class="project-card">
+                <h3>Web Development Portfolio</h3>
+                <p>A comprehensive portfolio website showcasing various web development projects and coding skills.</p>
+            </div>
+            <!-- Add more project cards as needed -->
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <h2>My Certificates</h2>
+        <div class="certificate-list">
+            <div class="certificate-item">
+                <h3>Web Development Certification</h3>
+                <p>Completed a comprehensive web development course covering front-end and back-end technologies.</p>
+            </div>
+            <div class="certificate-item">
+                <h3>Java Programming</h3>
+                <p>Achieved certification in Java programming, focusing on object-oriented principles and application development.</p>
+            </div>
+            <div class="certificate-item">
+                <h3>Data Structures & Algorithms</h3>
+                <p>Completed an in-depth course on data structures and algorithms to enhance problem-solving skills.</p>
+            </div>
+            <!-- Add more certificate items as needed -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form" action="mailto:ryuma@example.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Connect with me:</p>
+        <a href="mailto:ryuma@example.com">Email</a> |
+        <a href="https://github.com/ryuma" target="_blank">GitHub</a> |
+        <a href="https://linkedin.com/in/ryuma" target="_blank">LinkedIn</a>
+        <p>&copy; 2024 Ryuma. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
+
