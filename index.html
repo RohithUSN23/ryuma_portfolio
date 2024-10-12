@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ryuma's Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #0a0f25;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #101532;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: #00d9ff;
+        }
+
+        .intro {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2em;
+            color: #00ffab;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 20px auto;
+            color: #b0b3c6;
+        }
+
+        .portfolio {
+            background-color: #12193e;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .portfolio h2 {
+            font-size: 2.5em;
+            color: #00ffab;
+        }
+
+        .portfolio .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .portfolio .project-card {
+            background-color: #1a244d;
+            border: 1px solid #00d9ff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card h3 {
+            color: #00d9ff;
+            font-size: 1.5em;
+        }
+
+        .project-card p {
+            color: #b0b3c6;
+            font-size: 1em;
+        }
+
+        footer {
+            background-color: #101532;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #b0b3c6;
+            font-size: 1em;
+        }
+
+        .neon-btn {
+            background-color: #00d9ff;
+            border: none;
+            padding: 10px 20px;
+            color: #101532;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .neon-btn:hover {
+            box-shadow: 0 0 20px #00d9ff, 0 0 30px #00d9ff, 0 0 40px #00d9ff;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio .projects {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ryuma's Portfolio</h1>
+</header>
+
+<section class="intro">
+    <h2>Welcome to My Futuristic World</h2>
+    <p>Hi, I'm Ryuma, a college student passionate about technology and development. Below, you'll find my projects, coding work, and certificates that showcase my journey and achievements.</p>
+</section>
+
+<section class="portfolio">
+    <h2>My Projects & Certificates</h2>
+    <div class="projects">
+        <div class="project-card">
+            <h3>Project 1: Futuristic App</h3>
+            <p>A mobile application designed with a sleek, futuristic interface, focusing on user experience and efficiency.</p>
+        </div>
+        <div class="project-card">
+            <h3>Certificate: Web Development</h3>
+            <p>Certified in web development, mastering both front-end and back-end technologies.</p>
+        </div>
+        <div class="project-card">
+            <h3>Code Repo: AI Chatbot</h3>
+            <p>Developed an AI-powered chatbot capable of understanding and responding to user queries in real-time.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>Connect with me: <a href="mailto:ryuma@example.com" class="neon-btn">Email Me</a></p>
+</footer>
+
+</body>
+</html>
